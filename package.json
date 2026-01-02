@@ -14,11 +14,8 @@
     "test:watch": "vitest --watch",
     "check:all": "bash check-all.sh",
     "check:dev": "npm run dev & sleep 3 && curl -s http://localhost:3000 && pkill -f 'next'",
-    "check:test": "npm run test:run",
-    "check:build": "npm run build",
     "check:types": "npx tsc --noEmit",
-    "backend": "json-server --watch db.json --port 3001",
-    "dev:full": "concurrently \"npm run backend\" \"npm run dev\""
+    "backend": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -56,11 +53,11 @@
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
-    "next": "^16.0.7",
+    "next": "^16.1.1",
     "next-themes": "^0.4.6",
-    "react": "^19.2.1",
+    "react": "^19.2.3",
     "react-day-picker": "^9.13.0",
-    "react-dom": "^19.2.1",
+    "react-dom": "^19.2.3",
     "react-hook-form": "^7.68.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.2",
@@ -74,7 +71,7 @@
     "@faker-js/faker": "^10.1.0",
     "@playwright/test": "^1.57.0",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/react": "^16.3.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
@@ -84,7 +81,6 @@
     "@vitest/browser": "^4.0.15",
     "@vitest/ui": "^4.0.15",
     "autoprefixer": "^10.4.23",
-    "babel-plugin-react-compiler": "1.0.0",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
@@ -95,8 +91,12 @@
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "tailwindcss": "^3.4.19",
-    "typescript": "^5.9.3",
+    "typescript": "^5.4.5",
     "vite": "6.3.5",
     "vitest": "^4.0.15"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
   }
 }
