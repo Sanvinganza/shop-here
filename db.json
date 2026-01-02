@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Футболка Basic",
+      "price": 1999,
+      "description": "Классическая футболка из 100% хлопка",
+      "category": "Футболки",
+      "images": [
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+        "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w-400"
+      ],
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": ["Белый", "Черный", "Серый"],
+      "stock": 42,
+      "rating": 4.5,
+      "reviews": 128
+    },
+    {
+      "id": 2,
+      "title": "Джинсы Slim Fit",
+      "price": 4999,
+      "description": "Узкие джинсы из денима премиум качества",
+      "category": "Джинсы",
+      "images": [
+        "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400",
+        "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400"
+      ],
+      "sizes": ["28", "30", "32", "34", "36"],
+      "colors": ["Синий", "Черный"],
+      "stock": 24,
+      "rating": 4.7,
+      "reviews": 89
+    },
+    {
+      "id": 3,
+      "title": "Кроссовки Street",
+      "price": 7999,
+      "description": "Уличные кроссовки для повседневной носки",
+      "category": "Обувь",
+      "images": [
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400",
+        "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=400"
+      ],
+      "sizes": ["38", "39", "40", "41", "42", "43"],
+      "colors": ["Белый", "Черный", "Серый"],
+      "stock": 15,
+      "rating": 4.8,
+      "reviews": 203
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "Футболки", "slug": "t-shirts", "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w-400" },
+    { "id": 2, "name": "Джинсы", "slug": "jeans", "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400" },
+    { "id": 3, "name": "Обувь", "slug": "shoes", "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400" },
+    { "id": 4, "name": "Куртки", "slug": "jackets", "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400" },
+    { "id": 5, "name": "Аксессуары", "slug": "accessories", "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400" }
+  ],
+  "orders": [],
+  "users": []
+}
