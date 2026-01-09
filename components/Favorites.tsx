@@ -1,6 +1,6 @@
 'use client';
 
-import { Product } from '../app/page';
+import { Product } from '@/lib/types';
 import { Heart, ShoppingCart, X } from 'lucide-react';
 
 interface FavoritesProps {

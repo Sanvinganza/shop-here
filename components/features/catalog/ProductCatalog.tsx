@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Product } from '../app/page';
+import { Product } from '@/lib/types';
 import { ProductCard } from './ProductCard';
 import { CategoryFilter } from './CategoryFilter';
 import { SearchBar } from './SearchBar';

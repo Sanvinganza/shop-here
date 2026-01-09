@@ -1,6 +1,6 @@
 'use client';
 
-import { CartItem } from '../app/page';
+import { CartItem } from '@/lib/types';
 import { Minus, Plus, Trash2, ArrowLeft } from 'lucide-react';
 
 interface CartProps {
