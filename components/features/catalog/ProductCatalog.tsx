@@ -1,9 +1,12 @@
+'use client';
+
 import { useState, useMemo } from 'react';
 import { Product } from '@/lib/types';
 import { ProductCard } from './ProductCard';
 import { CategoryFilter } from './CategoryFilter';
 import { SearchBar } from './SearchBar';
 import { SortWidget } from './SortWidget';
+import { SortOption } from '@/types/sort'; // Используем централизованный тип
 import { PriceFilter } from './PriceFilter';
 import { RatingFilter } from './RatingFilter';
 import { StockFilter } from './StockFilter';
@@ -11,6 +14,7 @@ import { Pagination } from './Pagination';
 import { QuickView } from './QuickView';
 import { SlidersHorizontal } from 'lucide-react';
 
+// Временные данные для тестирования
 const PRODUCTS: Product[] = [
   {
     id: '1',
@@ -35,130 +39,8 @@ const PRODUCTS: Product[] = [
     rating: 4.6,
     inStock: true,
     stockCount: 8
-  },
-  {
-    id: '3',
-    name: 'Портативная колонка',
-    price: 8990,
-    image: 'https://images.unsplash.com/photo-1674303324806-7018a739ed11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlbGVzcyUyMHNwZWFrZXJ8ZW58MXx8fHwxNzY1Njc2MzE4fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Мощная беспроводная колонка с глубоким басом',
-    category: 'Аудио',
-    popularity: 78,
-    rating: 4.4,
-    inStock: true,
-    stockCount: 25
-  },
-  {
-    id: '4',
-    name: 'Ноутбук Pro',
-    price: 89990,
-    image: 'https://images.unsplash.com/photo-1511385348-a52b4a160dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXB0b3AlMjBjb21wdXRlcnxlbnwxfHx8fDE3NjU3NzQ5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Мощный ноутбук для работы и творчества',
-    category: 'Компьютеры',
-    popularity: 92,
-    rating: 4.9,
-    inStock: true,
-    stockCount: 5
-  },
-  {
-    id: '5',
-    name: 'Смартфон X',
-    price: 54990,
-    image: 'https://images.unsplash.com/photo-1732998360037-4857039d77a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwZGV2aWNlfGVufDF8fHx8MTc2NTc2OTY1OXww&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Флагманский смартфон с продвинутой камерой',
-    category: 'Телефоны',
-    popularity: 98,
-    rating: 4.7,
-    inStock: false,
-    stockCount: 0
-  },
-  {
-    id: '6',
-    name: 'Профессиональная камера',
-    price: 129990,
-    image: 'https://images.unsplash.com/photo-1532272278764-53cd1fe53f72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1lcmElMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzY1NjkxNjU3fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Беззеркальная камера для профессионалов',
-    category: 'Фото',
-    popularity: 85,
-    rating: 4.9,
-    inStock: true,
-    stockCount: 3
-  },
-  {
-    id: '7',
-    name: 'Механическая клавиатура',
-    price: 15990,
-    image: 'https://images.unsplash.com/photo-1705488387173-b3e4890259ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrZXlib2FyZCUyMG1lY2hhbmljYWx8ZW58MXx8fHwxNzY1NzY3NDgxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'RGB клавиатура с переключателями Cherry MX',
-    category: 'Компьютеры',
-    popularity: 82,
-    rating: 4.5,
-    inStock: true,
-    stockCount: 12
-  },
-  {
-    id: '8',
-    name: 'Игровая мышь',
-    price: 6990,
-    image: 'https://images.unsplash.com/photo-1594008671689-8d8b9480cae8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VzZSUyMGdhbWluZ3xlbnwxfHx8fDE3NjU3OTA0Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Эргономичная мышь с высоким DPI',
-    category: 'Компьютеры',
-    popularity: 75,
-    rating: 4.3,
-    inStock: true,
-    stockCount: 30
-  },
-  {
-    id: '9',
-    name: 'Монитор 4K',
-    price: 45990,
-    image: 'https://images.unsplash.com/photo-1668979324665-7218b59db345?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb25pdG9yJTIwZGlzcGxheXxlbnwxfHx8fDE3NjU3MTEzNTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Профессиональный монитор с IPS панелью',
-    category: 'Компьютеры',
-    popularity: 90,
-    rating: 4.8,
-    inStock: true,
-    stockCount: 7
-  },
-  {
-    id: '10',
-    name: 'Планшет Pro',
-    price: 64990,
-    image: 'https://images.unsplash.com/photo-1760708369071-e8a50a8979cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YWJsZXQlMjBkZXZpY2V8ZW58MXx8fHwxNzY1NjY1NDk3fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Планшет с поддержкой стилуса для творчества',
-    category: 'Телефоны',
-    popularity: 87,
-    rating: 4.7,
-    inStock: false,
-    stockCount: 0
-  },
-  {
-    id: '11',
-    name: 'Беспроводные наушники-вкладыши',
-    price: 9990,
-    image: 'https://images.unsplash.com/photo-1627989580309-bfaf3e58af6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlbGVzcyUyMGVhcmJ1ZHN8ZW58MXx8fHwxNzY1NzA4NDE0fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Компактные наушники с зарядным кейсом',
-    category: 'Аудио',
-    popularity: 93,
-    rating: 4.6,
-    inStock: true,
-    stockCount: 20
-  },
-  {
-    id: '12',
-    name: 'Фитнес-браслет',
-    price: 4990,
-    image: 'https://images.unsplash.com/photo-1532435109783-fdb8a2be0baa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHdhdGNoJTIwZml0bmVzc3xlbnwxfHx8fDE3NjU2OTA4MzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Водонепроницаемый браслет с GPS',
-    category: 'Аксессуары',
-    popularity: 72,
-    rating: 4.2,
-    inStock: true,
-    stockCount: 18
   }
 ];
-
-export type SortOption = 'popularity' | 'price-asc' | 'price-desc' | 'rating';
 
 interface ProductCatalogProps {
   onAddToCart: (product: Product) => void;
@@ -247,6 +129,10 @@ export function ProductCatalog({
         break;
       case 'rating':
         sorted.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'newest':
+        // Для newest можно добавить поле createdAt
+        sorted.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
         break;
     }
 

@@ -1,6 +1,6 @@
 'use client';
 
-export type SortOption = 'popularity' | 'price-asc' | 'price-desc' | 'rating' | 'newest';
+import { SortOption } from '@/types/sort';
 
 interface SortWidgetProps {
   value: SortOption;
@@ -16,11 +16,15 @@ export function SortWidget({ value, onChange }: SortWidgetProps) {
     { value: 'newest', label: 'Сначала новые' }
   ];
 
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    onChange(e.target.value as SortOption);
+  };
+
   return (
     <div className="relative">
       <select
         value={value}
-        onChange={(e) => onChange(e.target.value as SortOption)}
+        onChange={handleChange}
         className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent min-w-[200px]"
       >
         {sortOptions.map(option => (
@@ -37,3 +41,6 @@ export function SortWidget({ value, onChange }: SortWidgetProps) {
     </div>
   );
 }
+
+// Экспортируем тип для использования в других файлах
+export type { SortOption };

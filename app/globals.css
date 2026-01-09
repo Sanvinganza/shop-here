@@ -201,3 +201,16 @@ html {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+/* Добавьте это в конец app/globals.css */
+:root {
+  --primary: #3b82f6; /* default clothing color */
+  --primary-foreground: #ffffff;
+  --secondary: #8b5cf6;
+  --accent: #10b981;
+}
+
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+.hover\:bg-primary:hover { background-color: var(--primary); }
+
