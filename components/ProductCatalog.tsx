@@ -1,15 +1,15 @@
 import { useState, useMemo } from 'react';
-import { Product } from '../app/page';
-import { ProductCard } from './ProductCard';
-import { CategoryFilter } from './CategoryFilter';
-import { SearchBar } from './SearchBar';
-import { SortWidget } from './SortWidget';
-import { PriceFilter } from './PriceFilter';
-import { RatingFilter } from './RatingFilter';
-import { StockFilter } from './StockFilter';
-import { Pagination } from './Pagination';
-import { QuickView } from './QuickView';
+import { ProductCard } from '@/components/ProductCard';
+import { CategoryFilter } from '@/components/CategoryFilter';
+import { SearchBar } from '@/components/SearchBar';
+import { SortWidget } from '@/components/SortWidget';
+import { PriceFilter } from '@/components/PriceFilter';
+import { RatingFilter } from '@/components/RatingFilter';
+import { StockFilter } from '@/components/StockFilter';
+import { Pagination } from '@/components/Pagination';
+import { QuickView } from '@/components/QuickView';
 import { SlidersHorizontal } from 'lucide-react';
+import { Product } from '@/app/[locale]/types';
 
 const PRODUCTS: Product[] = [
   {

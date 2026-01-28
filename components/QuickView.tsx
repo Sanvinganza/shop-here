@@ -1,4 +1,4 @@
-import { Product } from '../app/page';
+import { Product } from '../app/[locale]/page';
 import { X, ShoppingCart, Heart, GitCompare, Star, Package, PackageX } from 'lucide-react';
 
 interface QuickViewProps {

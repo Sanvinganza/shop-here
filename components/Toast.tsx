@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
-import { X, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import { X, CheckCircle, AlertCircle, Info, WandSparklesIcon } from 'lucide-react';
 
-export interface ToastMessage {
+interface IToast {
   id: string;
-  type: 'success' | 'error' | 'info';
   message: string;
+  type: 'success' | 'error' | 'info' | 'warning';
+  duration?: number;
 }
 
 interface ToastProps {
-  toast: ToastMessage;
+  toast: IToast;
   onClose: (id: string) => void;
 }
 
@@ -24,13 +25,15 @@ export function Toast({ toast, onClose }: ToastProps) {
   const icons = {
     success: <CheckCircle className="w-5 h-5" />,
     error: <AlertCircle className="w-5 h-5" />,
-    info: <Info className="w-5 h-5" />
+    info: <Info className="w-5 h-5" />,
+    warning: <WandSparklesIcon className="w-5 h-5" />
   };
 
   const styles = {
     success: 'bg-green-50 text-green-800 border-green-200',
     error: 'bg-red-50 text-red-800 border-red-200',
-    info: 'bg-blue-50 text-blue-800 border-blue-200'
+    info: 'bg-blue-50 text-blue-800 border-blue-200',
+    warning: 'bg-orange-50 text-orange-800 border-orange-200'
   };
 
   return (
@@ -50,7 +53,7 @@ export function Toast({ toast, onClose }: ToastProps) {
 }
 
 interface ToastContainerProps {
-  toasts: ToastMessage[];
+  toasts: IToast[];
   onClose: (id: string) => void;
 }
 

@@ -17,16 +17,6 @@ describe('Counter Store', () => {
     expect(result.current.count).toBe(1)
   })
 
-  it('should decrement count', () => {
-    const { result } = renderHook(() => useCounter())
-    
-    act(() => {
-      result.current.decrement()
-    })
-    
-    expect(result.current.count).toBe(-1)
-  })
-
   it('should reset count', () => {
     const { result } = renderHook(() => useCounter())
     

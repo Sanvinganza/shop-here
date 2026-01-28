@@ -1,0 +1,66 @@
+{
+  "header": {
+    "logo": "CompStore",
+    "search": "Тауарларды іздеу...",
+    "login": "Кіру",
+    "register": "Тіркелу",
+    "cart": "Себет",
+    "profile": "Профиль",
+    "logout": "Шығу"
+  },
+  "navigation": {
+    "home": "Басты",
+    "computers": "Компьютерлер",
+    "laptops": "Ноутбуктер",
+    "components": "Құрамдас бөліктер",
+    "peripherals": "Периферия",
+    "gaming": "Ойын",
+    "workstations": "Жұмыс станциялары",
+    "sales": "Акциялар",
+    "about": "Біз туралы",
+    "contact": "Байланыс"
+  },
+  "buttons": {
+    "addToCart": "Себетке қосу",
+    "buyNow": "Қазір сатып алу",
+    "learnMore": "Толығырақ",
+    "compare": "Салыстыру",
+    "viewAll": "Барлығын қарау",
+    "apply": "Қолдану",
+    "clear": "Тазарту",
+    "submit": "Жіберу",
+    "cancel": "Болдырмау"
+  },
+  "filters": {
+    "price": "Бағасы",
+    "category": "Санат",
+    "brand": "Бренд",
+    "sortBy": "Сұрыптау",
+    "availability": "Қолжетімділік",
+    "minPrice": "Мин. баға",
+    "maxPrice": "Макс. баға"
+  },
+  "product": {
+    "specifications": "Сипаттамалар",
+    "reviews": "Пікірлер",
+    "description": "Сипаттама",
+    "inStock": "Қоймада бар",
+    "outOfStock": "Қоймада жоқ",
+    "preOrder": "Алдын ала тапсырыс",
+    "delivery": "Жеткізу",
+    "warranty": "Кепілдік",
+    "rating": "Рейтинг"
+  },
+  "footer": {
+    "aboutCompany": "Компания туралы",
+    "contacts": "Байланыстар",
+    "paymentMethods": "Төлем әдістері",
+    "delivery": "Жеткізу",
+    "warranty": "Кепілдік",
+    "privacyPolicy": "Құпиялылық саясаты",
+    "terms": "Пайдалану шарттары",
+    "subscribe": "Жаңалықтарға жазылу",
+    "subscribeButton": "Жазылу",
+    "copyright": "© 2024 CompStore. Барлық құқықтар қорғалған."
+  }
+}

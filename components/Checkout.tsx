@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CartItem, DeliveryInfo, PaymentInfo } from '../app/page';
+import { CartItem, DeliveryInfo, PaymentInfo } from '../app/[locale]/page';
 import { ArrowLeft, Package, Truck, CreditCard } from 'lucide-react';
 
 interface CheckoutProps {
