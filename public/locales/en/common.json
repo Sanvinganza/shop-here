@@ -1,0 +1,66 @@
+{
+  "header": {
+    "logo": "CompStore",
+    "search": "Search products...",
+    "login": "Login",
+    "register": "Register",
+    "cart": "Cart",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "navigation": {
+    "home": "Home",
+    "computers": "Computers",
+    "laptops": "Laptops",
+    "components": "Components",
+    "peripherals": "Peripherals",
+    "gaming": "Gaming",
+    "workstations": "Workstations",
+    "sales": "Sales",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "learnMore": "Learn More",
+    "compare": "Compare",
+    "viewAll": "View All",
+    "apply": "Apply",
+    "clear": "Clear",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "filters": {
+    "price": "Price",
+    "category": "Category",
+    "brand": "Brand",
+    "sortBy": "Sort By",
+    "availability": "Availability",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price"
+  },
+  "product": {
+    "specifications": "Specifications",
+    "reviews": "Reviews",
+    "description": "Description",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "preOrder": "Pre-order",
+    "delivery": "Delivery",
+    "warranty": "Warranty",
+    "rating": "Rating"
+  },
+  "footer": {
+    "aboutCompany": "About Company",
+    "contacts": "Contacts",
+    "paymentMethods": "Payment Methods",
+    "delivery": "Delivery",
+    "warranty": "Warranty",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "subscribe": "Subscribe to newsletter",
+    "subscribeButton": "Subscribe",
+    "copyright": "© 2024 CompStore. All rights reserved."
+  }
+}

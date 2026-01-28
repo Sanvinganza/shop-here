@@ -1,12 +1,12 @@
 'use client';
 
-import { Product } from '@/lib/types';
+import { Product } from '@/app/[locale]/types';
 import { Heart, ShoppingCart, X } from 'lucide-react';
 
 interface FavoritesProps {
   favorites: Product[];
   onAddToCart: (product: Product) => void;
-  onRemoveFromFavorites: (product: Product) => void;
+  onRemoveFromFavorites: (product_id: string) => void;
 }
 
 export function Favorites({ favorites, onAddToCart, onRemoveFromFavorites }: FavoritesProps) {
@@ -42,7 +42,7 @@ export function Favorites({ favorites, onAddToCart, onRemoveFromFavorites }: Fav
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
               <button
-                onClick={() => onRemoveFromFavorites(product)}
+                onClick={() => onRemoveFromFavorites(product.id)}
                 className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition-colors"
               >
                 <X className="w-4 h-4 text-red-600" />

@@ -1,4 +1,6 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+const API_URL = typeof window !== 'undefined' 
+  ? window.location.origin 
+  : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
 export async function fetchProducts() {
   const response = await fetch(`${API_URL}/products`)

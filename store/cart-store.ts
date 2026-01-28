@@ -25,7 +25,7 @@ interface CartStore {
 
 export const useCartStore = create<CartStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       items: [],
       total: 0,
       itemCount: 0,

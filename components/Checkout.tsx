@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { CartItem, DeliveryInfo, PaymentInfo } from '@/lib/types';
 import { ArrowLeft, Package, Truck, CreditCard } from 'lucide-react';
+import { CartItem, DeliveryInfo, PaymentInfo } from '@/app/[locale]/types';
 
 interface CheckoutProps {
   cart: CartItem[];

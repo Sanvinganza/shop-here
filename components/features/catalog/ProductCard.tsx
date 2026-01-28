@@ -1,6 +1,6 @@
 'use client';
 
-import { Product } from '@/lib/types';
+import { Product } from '@/app/[locale]/types';
 import { ShoppingCart, Star, Heart, GitCompare, Eye } from 'lucide-react';
 
 interface ProductCardProps {

@@ -1,4 +1,4 @@
-import { Product } from '@/lib/types';
+import { Product } from '@/app/[locale]/types';
 import { X, ShoppingCart, Heart, GitCompare, Star, Package, PackageX } from 'lucide-react';
 
 interface QuickViewProps {

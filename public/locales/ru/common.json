@@ -1,0 +1,66 @@
+{
+  "header": {
+    "logo": "CompStore",
+    "search": "Поиск товаров...",
+    "login": "Войти",
+    "register": "Регистрация",
+    "cart": "Корзина",
+    "profile": "Профиль",
+    "logout": "Выйти"
+  },
+  "navigation": {
+    "home": "Главная",
+    "computers": "Компьютеры",
+    "laptops": "Ноутбуки",
+    "components": "Комплектующие",
+    "peripherals": "Периферия",
+    "gaming": "Игровые",
+    "workstations": "Рабочие станции",
+    "sales": "Акции",
+    "about": "О нас",
+    "contact": "Контакты"
+  },
+  "buttons": {
+    "addToCart": "В корзину",
+    "buyNow": "Купить сейчас",
+    "learnMore": "Подробнее",
+    "compare": "Сравнить",
+    "viewAll": "Смотреть все",
+    "apply": "Применить",
+    "clear": "Очистить",
+    "submit": "Отправить",
+    "cancel": "Отмена"
+  },
+  "filters": {
+    "price": "Цена",
+    "category": "Категория",
+    "brand": "Бренд",
+    "sortBy": "Сортировка",
+    "availability": "Наличие",
+    "minPrice": "Мин. цена",
+    "maxPrice": "Макс. цена"
+  },
+  "product": {
+    "specifications": "Характеристики",
+    "reviews": "Отзывы",
+    "description": "Описание",
+    "inStock": "В наличии",
+    "outOfStock": "Нет в наличии",
+    "preOrder": "Предзаказ",
+    "delivery": "Доставка",
+    "warranty": "Гарантия",
+    "rating": "Рейтинг"
+  },
+  "footer": {
+    "aboutCompany": "О компании",
+    "contacts": "Контакты",
+    "paymentMethods": "Способы оплаты",
+    "delivery": "Доставка",
+    "warranty": "Гарантия",
+    "privacyPolicy": "Политика конфиденциальности",
+    "terms": "Условия использования",
+    "subscribe": "Подписаться на рассылку",
+    "subscribeButton": "Подписаться",
+    "copyright": "© 2024 CompStore. Все права защищены."
+  }
+}

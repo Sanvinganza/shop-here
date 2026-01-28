@@ -1,16 +1,18 @@
+// next.config.js
+import withNextIntl from 'next-intl/plugin';
+
+const withNextIntlConfig = withNextIntl('./app/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  output: 'standalone',
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
-  serverExternalPackages: [],
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  }
-}
+};
 
-module.exports = nextConfig
+export default withNextIntlConfig(nextConfig);

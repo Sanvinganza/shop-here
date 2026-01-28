@@ -1,12 +1,12 @@
 'use client';
 
-import { Product } from '@/lib/types';
+import { Product } from '@/app/[locale]/types';
 import { GitCompare, ShoppingCart, X, Star } from 'lucide-react';
 
 interface CompareProps {
   compare: Product[];
   onAddToCart: (product: Product) => void;
-  onRemoveFromCompare: (product: Product) => void;
+  onRemoveFromCompare: (product_id: string) => void;
 }
 
 export function Compare({ compare, onAddToCart, onRemoveFromCompare }: CompareProps) {
@@ -38,7 +38,7 @@ export function Compare({ compare, onAddToCart, onRemoveFromCompare }: ComparePr
                 <th key={product.id} className="p-4 min-w-[250px]">
                   <div className="relative">
                     <button
-                      onClick={() => onRemoveFromCompare(product)}
+                      onClick={() => onRemoveFromCompare(product.id)}
                       className="absolute -top-2 -right-2 p-1 bg-neutral-100 rounded-full hover:bg-red-50 transition-colors"
                     >
                       <X className="w-4 h-4 text-red-600" />
